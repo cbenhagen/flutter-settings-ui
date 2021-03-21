@@ -30,6 +30,7 @@ class SettingsSection extends AbstractSection {
 
   @override
   Widget build(BuildContext context) {
+    return androidSection(context);
     if (kIsWeb) {
       return iosSection();
     } else if (Platform.isIOS || Platform.isMacOS) {

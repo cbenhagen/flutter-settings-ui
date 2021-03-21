@@ -75,6 +75,7 @@ class SettingsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return androidTile(context);
     if (kIsWeb) {
       return iosTile(context);
     } else if (Platform.isIOS || Platform.isMacOS) {
@@ -124,7 +125,7 @@ class SettingsTile extends StatelessWidget {
 
   Widget androidTile(BuildContext context) {
     if (_tileType == _SettingsTileType.switchTile) {
-      return SwitchListTile(
+      return SwitchListTile.adaptive(
         secondary: leading,
         value: switchValue!,
         activeColor: switchActiveColor,
